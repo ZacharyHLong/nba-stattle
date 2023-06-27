@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { useState } from 'react';
 import './App.css';
+import { ToggleButton, ToggleButtonGroup, Box } from '@mui/material';
 
 const players = [
   {
     name: 'LeBron James',
     headshot: 'src/assets/headshots/lebron-james.jpg',
     pointsPerGame: 27.0,
-    assistsPerGame: 7.4,
     reboundsPerGame: 7.4,
+    assistsPerGame: 7.4,
     stealsPerGame: 1.6,
     blocksPerGame: 0.8
   },
@@ -17,14 +18,14 @@ const players = [
     name: 'Kobe Bryant',
     headshot: 'src/assets/headshots/kobe-bryant.jpg',
     pointsPerGame: 25.0,
-    assistsPerGame: 4.7,
     reboundsPerGame: 5.2,
+    assistsPerGame: 4.7,
     stealsPerGame: 1.4,
     blocksPerGame: 0.5
   }
 ];
 
-const statNames = ['Points per game', 'Assists per game', 'Rebounds per game', 'Steals per game', 'Blocks per game'];
+const statNames = ['Points', 'Rebounds', 'Assists', 'Steals', 'Blocks'];
 
 // function ButtonCreator({ players, statNames }) {
 //     const handleButtonClick = (player, statName) => {
@@ -55,6 +56,36 @@ const statNames = ['Points per game', 'Assists per game', 'Rebounds per game', '
 //       </div>
 //     );
 //   }
+
+const generateStatRow = (statName, index) => {
+  return (
+    <div className="stat-row" key={index}>
+      <ToggleButtonGroup fullWidth="true">
+        <Box flexGrow={1} display="flex" justifyContent="center">
+          <ToggleButton 
+            className="stat-button" 
+            value="check" selected={true} 
+            sx={{ width: '100px', height: '40px' }}
+          >
+            {statName}
+          </ToggleButton>
+        </Box>
+        <Box flexGrow={1} display="flex" justifyContent="center">
+          <p>{statName} per game</p>
+        </Box>
+        <Box flexGrow={1} display="flex" justifyContent="center">
+        <ToggleButton 
+            className="stat-button" 
+            value="check" selected={true} 
+            sx={{ width: '100px', height: '40px' }}
+          >
+            {statName}
+          </ToggleButton>
+        </Box>
+      </ToggleButtonGroup>
+    </div>
+  );
+};
   
   
   
@@ -69,21 +100,25 @@ const App = () => {
       </div>
 
       <div className="game-box">
+
         <div className="headshot-row">
           <div className="player-container">
             <div className="headshot-container">
               <img className="headshot" src={players[0].headshot} alt={players[0].name} />
             </div>
-            <p>{players[0].name}</p>
+            <h3>{players[0].name}</h3>
           </div>
           <div className="player-container">
             <div className="headshot-container">
               <img className="headshot" src={players[1].headshot} alt={players[1].name} />
             </div>
-            <p>{players[1].name}</p>
+            <h3>{players[1].name}</h3>
           </div>
         </div>
-        <p>game</p>
+
+        <div className="selector-box">
+            {statNames.map((statName, index) => generateStatRow(statName, index))}
+        </div>
       </div>
     </div>
     </>
