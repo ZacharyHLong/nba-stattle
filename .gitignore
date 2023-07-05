@@ -12,6 +12,7 @@ dist
 dist-ssr
 package-lock.json
 *.local
+psuedocode.md
 
 # Editor directories and files
 .vscode/*
