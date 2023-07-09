@@ -10,8 +10,7 @@ import { determineCorrectAnswers, checkAnswers } from './components/PlayerLogic.
 
 
 const App = () => {
-  const [selectedPlayers, setSelectedPlayers] = useState([players[0], players[3]]);
-  
+  const [selectedPlayers, setSelectedPlayers] = useState([players[0], players[2]]);
   const [userSelections, setUserSelections] = useState({
     Points: '',
     Rebounds: '',
@@ -28,7 +27,6 @@ const App = () => {
     { name: 'Blocks', property: 'blocksPerGame' },
   ];
 
-  
 
   const handleSubmit = () => {
     const correctCount = checkAnswers(userSelections, correctAnswers);
