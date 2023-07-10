@@ -7,9 +7,12 @@ import { players, statNames } from './components/Players.jsx';
 import PlayerContainer from './components/PlayerContainer.jsx';
 import StatButton from './components/StatButton.jsx';
 import { determineCorrectAnswers, checkAnswers } from './components/PlayerLogic.jsx';
+import WinModal from './components/WinModal.jsx';
 
 
 const App = () => {
+  const [userStreak, setUserStreak] = useState(0);
+  const [showWinModal, setShowWinModal] = useState(false);
   const [selectedPlayers, setSelectedPlayers] = useState([players[0], players[2]]);
   const [userSelections, setUserSelections] = useState({
     Points: '',
@@ -27,13 +30,51 @@ const App = () => {
     { name: 'Blocks', property: 'blocksPerGame' },
   ];
 
+  const closeWinModalAndRandomise = () => {
+    setShowWinModal(false);
+    setUserStreak(userStreak + 1);
+    setSelectedPlayers(randomisePlayers());
+  }
+
+  // const randomisePlayers = () => {
+  //   const randomPlayer1 = players[Math.floor(Math.random() * players.length)];
+  //   let randomPlayer2 = players[Math.floor(Math.random() * players.length)];
+  //   while (randomPlayer1.name === randomPlayer2.name) {
+  //     randomPlayer2 = players[Math.floor(Math.random() * players.length)];
+  //   }
+  //   return [randomPlayer1, randomPlayer2];
+  // };
+
+
+  const randomisePlayers = () => {
+    let newPlayer1, newPlayer2;
+  
+    do {
+      newPlayer1 = players[Math.floor(Math.random() * players.length)];
+    } while (newPlayer1 === selectedPlayers[0]);
+  
+    do {
+      newPlayer2 = players[Math.floor(Math.random() * players.length)];
+    } while (newPlayer2 === selectedPlayers[1] || newPlayer2 === newPlayer1);
+  
+    setUserSelections({
+      Points: '',
+      Rebounds: '',
+      Assists: '',
+      Steals: '',
+      Blocks: ''
+    });
+
+    return [newPlayer1, newPlayer2];
+  };
 
   const handleSubmit = () => {
     const correctCount = checkAnswers(userSelections, correctAnswers);
     if (correctCount === Object.keys(correctAnswers).length) {
-      alert('Congratulations! All your answers are correct!');
+      setShowWinModal(true);
     } else {
       alert(`You got ${correctCount} out of ${Object.keys(userSelections).length} correct. Try again!`);
+      setUserStreak(0);
     }
   };
   
@@ -56,7 +97,7 @@ const App = () => {
       <div className="game-box">
       <div className="header-container">
         <h1>STATTLE</h1>
-        <p>A game of statistical knowledge</p>
+        <h3>Current streak: {userStreak}</h3>
       </div>
 
       <div className="selector-box">
@@ -82,6 +123,12 @@ const App = () => {
 
       <button className="submit-button" onClick={handleSubmit}>Submit</button>
       </div>
+
+      <WinModal show={showWinModal} onClose={closeWinModalAndRandomise}>
+      <h3>🎉 Congratulations 🎉</h3>
+      <br></br>
+      <p>All your answers are correct!</p>
+      </WinModal>
 
     </div>
     </>

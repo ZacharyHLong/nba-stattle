@@ -257,6 +257,7 @@ export const players = [
   },
   {
     name: 'P.J. Tucker',
+    headshot: 'src/assets/headshots/pj-tucker.jpg',
     pointsPerGame: 6.8,
     reboundsPerGame: 5.5,
     assistsPerGame: 1.4,
