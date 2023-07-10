@@ -36,26 +36,16 @@ const App = () => {
     setSelectedPlayers(randomisePlayers());
   }
 
-  // const randomisePlayers = () => {
-  //   const randomPlayer1 = players[Math.floor(Math.random() * players.length)];
-  //   let randomPlayer2 = players[Math.floor(Math.random() * players.length)];
-  //   while (randomPlayer1.name === randomPlayer2.name) {
-  //     randomPlayer2 = players[Math.floor(Math.random() * players.length)];
-  //   }
-  //   return [randomPlayer1, randomPlayer2];
-  // };
-
-
   const randomisePlayers = () => {
     let newPlayer1, newPlayer2;
   
     do {
       newPlayer1 = players[Math.floor(Math.random() * players.length)];
-    } while (newPlayer1 === selectedPlayers[0]);
+    } while (newPlayer1 === selectedPlayers[0] || newPlayer1 === selectedPlayers[1]);
   
     do {
       newPlayer2 = players[Math.floor(Math.random() * players.length)];
-    } while (newPlayer2 === selectedPlayers[1] || newPlayer2 === newPlayer1);
+    } while (newPlayer2 === selectedPlayers[1] || newPlayer2 === selectedPlayers[0] || newPlayer2 === newPlayer1);
   
     setUserSelections({
       Points: '',
