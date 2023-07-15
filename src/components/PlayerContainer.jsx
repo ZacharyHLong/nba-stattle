@@ -6,7 +6,7 @@ const PlayerContainer = ({ player }) => {
       <div className="headshot-container">
         <img className="headshot" src={player.headshot} alt={player.name} />
       </div>
-      <h3>{player.name}</h3>
+      <p>{player.name}</p>
     </div>
   );
 };

@@ -87,29 +87,27 @@ const App = () => {
       <div className="game-box">
       <div className="header-container">
         <h1>STATTLE</h1>
-        <h3>Current streak: {userStreak}</h3>
+        <h2>{userStreak}</h2>
       </div>
 
       <div className="selector-box">
-        <div className="player-button-group">
-          <PlayerContainer player={selectedPlayers[0]} />
+        <PlayerContainer player={selectedPlayers[0]} className="left" />
+        <div className="stat-selector">
           <div className="stat-button-column">
-          {statNames.map((statName, index) => (
-            <StatButton statName={statName} index={index} player={selectedPlayers[0]} userSelections={userSelections} handleStatChange={handleStatChange}/>
-          ))}
+            {statNames.map((statName, index) => (
+              <StatButton statName={statName} index={index} player={selectedPlayers[0]} userSelections={userSelections} handleStatChange={handleStatChange}/>
+            ))}
+          </div>
+          <div className="stat-button-column">
+            {statNames.map((statName, index) => (
+              <StatButton statName={statName} index={index} player={selectedPlayers[1]} userSelections={userSelections} handleStatChange={handleStatChange} />
+            ))}
           </div>
         </div>
 
-        <div className="player-button-group">
-          <PlayerContainer player={selectedPlayers[1]} />
-          <div className="stat-button-column">
-          {statNames.map((statName, index) => (
-            <StatButton statName={statName} index={index} player={selectedPlayers[1]} userSelections={userSelections} handleStatChange={handleStatChange} />
-          ))}
-          </div>
-        </div>
+
+        <PlayerContainer player={selectedPlayers[1]} className="right" />
       </div>
-
 
       <button className="submit-button" onClick={handleSubmit}>Submit</button>
       </div>
