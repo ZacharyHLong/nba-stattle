@@ -1,7 +1,7 @@
 import  React from 'react';
 
 function getFontSize(text) {
-  let baseSize = 20; 
+  let baseSize = 18; 
   let maxLength = 20; 
   if (text.length > maxLength) {
     return `${baseSize - (text.length - maxLength)}px`;

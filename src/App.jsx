@@ -8,10 +8,12 @@ import PlayerContainer from './components/PlayerContainer.jsx';
 import StatButton from './components/StatButton.jsx';
 import { determineCorrectAnswers, checkAnswers } from './components/PlayerLogic.jsx';
 import WinModal from './components/WinModal.jsx';
+import StartScreen from './components/StartScreen.jsx';
 
 
 const App = () => {
   const [userStreak, setUserStreak] = useState(0);
+  const [showStartScreen, setShowStartScreen] = useState(true);
   const [showWinModal, setShowWinModal] = useState(false);
   const [selectedPlayers, setSelectedPlayers] = useState([players[0], players[2]]);
   const [userSelections, setUserSelections] = useState({
@@ -83,34 +85,37 @@ const App = () => {
   return (
     <>
     <div className="page-container">
-
-      <div className="game-box">
-      <div className="header-container">
-        <h1>STATTLE</h1>
-        <h2>{userStreak}</h2>
-      </div>
-
-      <div className="selector-box">
-        <PlayerContainer player={selectedPlayers[0]} classSide="left" />
-        <div className="stat-selector">
-          <div className="stat-button-column">
-            {statNames.map((statName, index) => (
-              <StatButton statName={statName} index={index} player={selectedPlayers[0]} userSelections={userSelections} handleStatChange={handleStatChange}/>
-            ))}
-          </div>
-          <div className="stat-button-column">
-            {statNames.map((statName, index) => (
-              <StatButton statName={statName} index={index} player={selectedPlayers[1]} userSelections={userSelections} handleStatChange={handleStatChange} />
-            ))}
-          </div>
+      {showStartScreen ? (
+        <StartScreen onStart={() => setShowStartScreen(false)} />
+      ) : (
+        <div className="game-box">
+        <div className="header-container">
+          <h1>STATTLE</h1>
+          <h2>{userStreak}</h2>
         </div>
 
+        <div className="selector-box">
+          <PlayerContainer player={selectedPlayers[0]} classSide="left" />
+          <div className="stat-selector">
+            <div className="stat-button-column">
+              {statNames.map((statName, index) => (
+                <StatButton statName={statName} index={index} player={selectedPlayers[0]} userSelections={userSelections} handleStatChange={handleStatChange}/>
+              ))}
+            </div>
+            <div className="stat-button-column">
+              {statNames.map((statName, index) => (
+                <StatButton statName={statName} index={index} player={selectedPlayers[1]} userSelections={userSelections} handleStatChange={handleStatChange} />
+              ))}
+            </div>
+          </div>
 
-        <PlayerContainer player={selectedPlayers[1]} classSide="right" />
-      </div>
 
-      <button className="submit-button" onClick={handleSubmit}>Submit</button>
-      </div>
+          <PlayerContainer player={selectedPlayers[1]} classSide="right" />
+        </div>
+
+        <button className="submit-button" onClick={handleSubmit}>Submit</button>
+        </div>
+      )}
 
       <WinModal show={showWinModal} onClose={closeWinModalAndRandomise}>
       <h3>🎉 Congratulations 🎉</h3>
