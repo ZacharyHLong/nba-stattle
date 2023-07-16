@@ -91,7 +91,7 @@ const App = () => {
       </div>
 
       <div className="selector-box">
-        <PlayerContainer player={selectedPlayers[0]} className="left" />
+        <PlayerContainer player={selectedPlayers[0]} classSide="left" />
         <div className="stat-selector">
           <div className="stat-button-column">
             {statNames.map((statName, index) => (
@@ -106,7 +106,7 @@ const App = () => {
         </div>
 
 
-        <PlayerContainer player={selectedPlayers[1]} className="right" />
+        <PlayerContainer player={selectedPlayers[1]} classSide="right" />
       </div>
 
       <button className="submit-button" onClick={handleSubmit}>Submit</button>
