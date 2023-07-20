@@ -1,7 +1,7 @@
 import  React from 'react';
 
 function getFontSize(text) {
-  let baseSize = 18; 
+  let baseSize = 22; 
   let maxLength = 20; 
   if (text.length > maxLength) {
     return `${baseSize - (text.length - maxLength)}px`;
@@ -17,8 +17,12 @@ const PlayerContainer = ({ player, classSide }) => {
       <div className="headshot-container">
         <img className="headshot" src={player.headshot} alt={player.name} />
       </div>
-      <p style={{ fontSize: getFontSize(player.name) }}>{firstName}</p>
-      <p style={{ fontSize: getFontSize(player.name) }}>{lastName}</p>
+      <p style={{ fontSize: getFontSize(player.name) }}>
+        <span className="player-name">{firstName.toUpperCase()}</span>
+      </p>
+      <p style={{ fontSize: getFontSize(player.name) }}>
+        <span className="player-name">{lastName.toUpperCase()}</span>
+      </p>
     </div>
   );
 };

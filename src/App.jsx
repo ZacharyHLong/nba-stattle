@@ -9,10 +9,12 @@ import StatButton from './components/StatButton.jsx';
 import { determineCorrectAnswers, checkAnswers } from './components/PlayerLogic.jsx';
 import WinModal from './components/WinModal.jsx';
 import StartScreen from './components/StartScreen.jsx';
+import ErrorMessage from './components/ErrorMessage.jsx';
 
 
 const App = () => {
   const [userStreak, setUserStreak] = useState(0);
+  const [errorMessage, setErrorMessage] = useState("");
   const [showStartScreen, setShowStartScreen] = useState(true);
   const [showWinModal, setShowWinModal] = useState(false);
   const [selectedPlayers, setSelectedPlayers] = useState([players[0], players[2]]);
@@ -63,9 +65,11 @@ const App = () => {
   const handleSubmit = () => {
     const correctCount = checkAnswers(userSelections, correctAnswers);
     if (correctCount === Object.keys(correctAnswers).length) {
+      setErrorMessage("");
       setShowWinModal(true);
     } else {
-      alert(`You got ${correctCount} out of ${Object.keys(userSelections).length} correct. Try again!`);
+      setErrorMessage(`You got ${correctCount} out of 5 correct.`);
+      setTimeout(() => setErrorMessage(""), 5000);
       setUserStreak(0);
     }
   };
@@ -88,7 +92,8 @@ const App = () => {
       {showStartScreen ? (
         <StartScreen onStart={() => setShowStartScreen(false)} />
       ) : (
-        <div className="game-box">
+        // <div className="game-box">
+        <div className={`game-box ${errorMessage !== "" ? 'shake-effect' : ''}`}>
         <div className="header-container">
           <h1>STATTLE</h1>
           <h2>{userStreak}</h2>
@@ -96,7 +101,9 @@ const App = () => {
 
         <div className="selector-box">
           <PlayerContainer player={selectedPlayers[0]} classSide="left" />
-          <div className="stat-selector">
+          <div className="column">
+            <ErrorMessage message={errorMessage} />
+            <div className="stat-selector">
             <div className="stat-button-column">
               {statNames.map((statName, index) => (
                 <StatButton statName={statName} index={index} player={selectedPlayers[0]} userSelections={userSelections} handleStatChange={handleStatChange}/>
@@ -106,6 +113,7 @@ const App = () => {
               {statNames.map((statName, index) => (
                 <StatButton statName={statName} index={index} player={selectedPlayers[1]} userSelections={userSelections} handleStatChange={handleStatChange} />
               ))}
+            </div>
             </div>
           </div>
 

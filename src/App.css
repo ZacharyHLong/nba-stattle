@@ -60,7 +60,7 @@ h1 {
 .headshot {
   border-radius: 3%;
   border: 6px solid #8c65a6;
-  /* height: 208px; */
+  margin-bottom: 10px;
 }
 
 .player-container {
@@ -74,6 +74,12 @@ h1 {
   color: #f2f2f2;
   font-size: 1.1rem;
   margin: 0;
+  font-weight: 500;
+}
+
+.player-name {
+  background-color: #8c65a6;
+  padding: 0 8px;
 }
 
 .selector-box {
@@ -189,12 +195,27 @@ h3 {
   text-align: end;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: start;
+  align-items: center;
+}
+
+.error-message {
+  position: absolute;
+  text-align: center;
+  color: #f2f2f2;
+}
+
 .stat-selector {
   display: flex;
   flex-direction: row;
-  align-items: start;
+  align-items: center;
   justify-content: center;
   width: 100%;
+  padding-top: 50px;
 }
 
 .start-screen {
@@ -219,4 +240,23 @@ h3 {
 
 .start-screen button {
   padding: 0.8rem;
+}
+
+@keyframes shake {
+  0% { transform: translate(0.5px, 0); }
+  10% { transform: translate(-0.5px, 0); }
+  20% { transform: translate(-1.5px, 0); }
+  30% { transform: translate(1.5px, 0); }
+  40% { transform: translate(0.5px, 0); }
+  50% { transform: translate(-0.5px, 0); }
+  60% { transform: translate(-1.5px, 0); }
+  70% { transform: translate(1.5px, 0); }
+  80% { transform: translate(-0.5px, 0); }
+  90% { transform: translate(0.5px, 0); }
+  100% { transform: translate(-0.5px, 0); }
+}
+
+.shake-effect {
+  animation: shake 0.2s;
+  animation-iteration-count: 2;
 }
