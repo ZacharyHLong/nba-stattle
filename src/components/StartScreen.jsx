@@ -9,7 +9,7 @@ const StartScreen = ({ onStart }) => {
         Players are randomly selected from all eras of the NBA. Each incorrect guess will incur a foul. 
         Once you have 3 fouls, the game is over.
       </p>
-      <button onClick={onStart}>Start</button>
+      <button onClick={onStart} className="submit-button">Start</button>
     </div>
   );
 };
