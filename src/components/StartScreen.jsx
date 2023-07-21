@@ -5,10 +5,11 @@ const StartScreen = ({ onStart }) => {
     <div className="start-screen">
       <h1>STATTLE</h1>
       <h4>How to play:</h4>
-      <p>Choose which player has a higher career average for each of the stat categories.
-        Players are randomly selected from all eras of the NBA. Each incorrect guess will incur a foul. 
-        Once you have 3 fouls, the game is over.
-      </p>
+      <ul>
+        <li>Choose which player has a higher career average for each of the displayed stat categories.</li>
+        <li>Each incorrect guess will incur a foul.</li>
+        <li>Once you have 5 fouls, the game is over.</li>
+      </ul>
       <button onClick={onStart} className="submit-button">Start</button>
     </div>
   );

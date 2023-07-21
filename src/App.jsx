@@ -10,13 +10,15 @@ import { determineCorrectAnswers, checkAnswers } from './components/PlayerLogic.
 import WinModal from './components/WinModal.jsx';
 import StartScreen from './components/StartScreen.jsx';
 import ErrorMessage from './components/ErrorMessage.jsx';
-
+import GameOverModal from './components/GameOverModal';
 
 const App = () => {
+  const [userFouls, setUserFouls] = useState(0);
   const [userStreak, setUserStreak] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
   const [showStartScreen, setShowStartScreen] = useState(true);
   const [showWinModal, setShowWinModal] = useState(false);
+  const [showGameOverModal, setShowGameOverModal] = useState(false);
   const [selectedPlayers, setSelectedPlayers] = useState([players[0], players[2]]);
   const [userSelections, setUserSelections] = useState({
     Points: '',
@@ -69,8 +71,12 @@ const App = () => {
       setShowWinModal(true);
     } else {
       setErrorMessage(`You got ${correctCount} out of 5 correct.`);
-      setTimeout(() => setErrorMessage(""), 5000);
+    }
+    if (userFouls >= 4) {
       setUserStreak(0);
+      setShowGameOverModal(true); 
+    } else {
+      setUserFouls(userFouls + 1);
     }
   };
   
@@ -85,18 +91,30 @@ const App = () => {
     }));
   };
 
+  const resetGame = () => {
+    setUserFouls(0);
+    setUserStreak(0);
+    setShowGameOverModal(false);
+    setErrorMessage("");
+    setShowStartScreen(true);
+  };
+  
 
   return (
     <>
     <div className="page-container">
       {showStartScreen ? (
-        <StartScreen onStart={() => setShowStartScreen(false)} />
+        <StartScreen onStart={() => setShowStartScreen(false) && setSelectedPlayers(randomisePlayers())} />
       ) : (
         // <div className="game-box">
         <div className={`game-box ${errorMessage !== "" ? 'shake-effect' : ''}`}>
         <div className="header-container">
           <h1>STATTLE</h1>
-          <h2>{userStreak}</h2>
+          <div className="score-box">
+            <h2>STREAK: {userStreak}</h2>
+            <div className="score-divider"></div>
+            <h2>FOULS: {userFouls}</h2>
+          </div>
         </div>
 
         <div className="selector-box">
@@ -130,6 +148,8 @@ const App = () => {
       <br></br>
       <p>All your answers are correct!</p>
       </WinModal>
+
+      <GameOverModal show={showGameOverModal} onClose={() => resetGame()} userStreak={userStreak} />
 
     </div>
     </>
