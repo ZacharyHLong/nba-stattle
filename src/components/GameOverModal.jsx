@@ -7,9 +7,11 @@ export default function GameOverModal({ show, onClose, userStreak }) {
 
   return (
     <div className='modal'>
-      <h2>Game Over!</h2>
-      <p>Your streak was: {userStreak}</p>
-      <button onClick={onClose}>Try Again</button>
+      <div className='modal-content'>
+        <h2>😵‍💫😵‍💫 Game Over! 😵‍💫😵‍💫</h2>
+        <p>Your streak was: {userStreak}</p>
+        <button onClick={onClose} className='submit-button'>Try Again</button>
+      </div>
     </div>
   );
 }

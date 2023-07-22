@@ -35,10 +35,15 @@ const App = () => {
     { name: 'Steals', property: 'stealsPerGame' },
     { name: 'Blocks', property: 'blocksPerGame' },
   ];
-
+  
   const closeWinModalAndRandomise = () => {
     setShowWinModal(false);
     setUserStreak(userStreak + 1);
+    setSelectedPlayers(randomisePlayers());
+  }
+  
+  const closeStartScreenAndRandomise = () => {
+    setShowStartScreen(false);
     setSelectedPlayers(randomisePlayers());
   }
 
@@ -71,13 +76,13 @@ const App = () => {
       setShowWinModal(true);
     } else {
       setErrorMessage(`You got ${correctCount} out of 5 correct.`);
-    }
-    if (userFouls >= 4) {
-      setUserStreak(0);
-      setShowGameOverModal(true); 
-    } else {
-      setUserFouls(userFouls + 1);
-    }
+      if (userFouls >= 4) {
+        setUserFouls(userFouls + 1);
+        setShowGameOverModal(true); 
+      } else {
+        setUserFouls(userFouls + 1);
+      }
+  }
   };
   
   const correctAnswers = determineCorrectAnswers(selectedPlayers, statMappings);
@@ -104,16 +109,20 @@ const App = () => {
     <>
     <div className="page-container">
       {showStartScreen ? (
-        <StartScreen onStart={() => setShowStartScreen(false) && setSelectedPlayers(randomisePlayers())} />
+        <StartScreen onStart={closeStartScreenAndRandomise} />
       ) : (
         // <div className="game-box">
         <div className={`game-box ${errorMessage !== "" ? 'shake-effect' : ''}`}>
         <div className="header-container">
           <h1>STATTLE</h1>
           <div className="score-box">
-            <h2>STREAK: {userStreak}</h2>
+            <div className="stretched-item right">
+              <h2>STREAK: {userStreak}</h2>
+            </div>
             <div className="score-divider"></div>
-            <h2>FOULS: {userFouls}</h2>
+            <div className="stretched-item right">
+              <h2>FOULS: {userFouls}</h2>
+            </div>  
           </div>
         </div>
 
@@ -144,7 +153,7 @@ const App = () => {
       )}
 
       <WinModal show={showWinModal} onClose={closeWinModalAndRandomise}>
-      <h3>🎉 Congratulations 🎉</h3>
+      <h4>🎉 Congratulations 🎉</h4>
       <br></br>
       <p>All your answers are correct!</p>
       </WinModal>
