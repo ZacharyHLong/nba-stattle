@@ -291,5 +291,140 @@ export const players = [
     stealsPerGame: 2.2,
     blocksPerGame: 0.2
   },
+  {
+    name: 'Karl-Anthony Towns',
+    headshot: 'src/assets/headshots/karl-anthony-towns.jpg',
+    pointsPerGame: 23.0,
+    reboundsPerGame: 11.2,
+    assistsPerGame: 3.2,
+    stealsPerGame: 0.8,
+    blocksPerGame: 1.3
+  },
+  {
+    name: 'Draymond Green',
+    headshot: 'src/assets/headshots/draymond-green.jpg',
+    pointsPerGame: 8.7,
+    reboundsPerGame: 7.0,
+    assistsPerGame: 5.6,
+    stealsPerGame: 1.4,
+    blocksPerGame: 1.0
+  },
+  {
+    name: 'Jordan Poole',
+    headshot: 'src/assets/headshots/jordan-poole.jpg',
+    pointsPerGame: 15.8,
+    reboundsPerGame: 2.6,
+    assistsPerGame: 3.4,
+    stealsPerGame: 0.7,
+    blocksPerGame: 0.2
+  },
+  {
+    name: 'Darius Garland',
+    headshot: 'src/assets/headshots/darius-garland.jpg',
+    pointsPerGame: 18.5,
+    reboundsPerGame: 2.6,
+    assistsPerGame: 6.7,
+    stealsPerGame: 1.1,
+    blocksPerGame: 0.1
+  },
+  {
+    name: 'Donovan Mitchell',
+    headshot: 'src/assets/headshots/donovan-mitchell.jpg',
+    pointsPerGame: 24.6,
+    reboundsPerGame: 4.2,
+    assistsPerGame: 4.5,
+    stealsPerGame: 1.3,
+    blocksPerGame:  0.3
+  },
+  {
+    name: 'Rudy Gobert',
+    headshot: 'src/assets/headshots/rudy-gobert.jpg',
+    pointsPerGame: 12.5, 
+    reboundsPerGame: 11.6,
+    assistsPerGame: 1.3,
+    stealsPerGame: 0.7,
+    blocksPerGame: 2.1
+  },
+  {
+    name: 'Anthony Davis',
+    headshot: 'src/assets/headshots/anthony-davis.jpg',
+    pointsPerGame: 24.0,
+    reboundsPerGame: 10.4,
+    assistsPerGame: 2.4,
+    stealsPerGame: 1.3,
+    blocksPerGame: 2.3
+  },
+  {
+    name: 'Anthony Edwards',
+    headshot: 'src/assets/headshots/anthony-edwards.jpg',
+    pointsPerGame: 21.8,
+    reboundsPerGame: 5.1,
+    assistsPerGame: 3.7,
+    stealsPerGame: 1.4,
+    blocksPerGame: 0.6
+  },
+  {
+    name: 'Trae Young',
+    headshot: 'src/assets/headshots/trae-young.jpg',
+    pointsPerGame: 25.5,
+    reboundsPerGame: 3.7,
+    assistsPerGame: 9.3,
+    stealsPerGame: 1.0,
+    blocksPerGame: 0.1
+  },
+  {
+    name: 'Luka Doncic',
+    headshot: 'src/assets/headshots/luka-doncic.jpg',
+    pointsPerGame: 27.6,
+    reboundsPerGame: 8.6,
+    assistsPerGame: 8.0,
+    stealsPerGame: 1.1,
+    blocksPerGame: 0.4
+  },
+  {
+    name: 'Kevin Garnett',
+    headshot: 'src/assets/headshots/kevin-garnett.jpg',
+    pointsPerGame: 17.8,
+    reboundsPerGame: 10.0,
+    assistsPerGame: 3.7,
+    stealsPerGame: 1.3,
+    blocksPerGame: 1.4
+  },
+  {
+    name: 'Tim Duncan',
+    headshot: 'src/assets/headshots/tim-duncan.jpg',
+    pointsPerGame: 19.0,
+    reboundsPerGame: 10.8,
+    assistsPerGame: 3.0,
+    stealsPerGame: 0.7,
+    blocksPerGame: 2.2
+  },
+  {
+    name: 'Mason Plumlee',
+    headshot: 'src/assets/headshots/mason-plumlee.jpg',
+    pointsPerGame: 8.6,
+    reboundsPerGame: 6.9,
+    assistsPerGame: 2.5,
+    stealsPerGame: 0.7,
+    blocksPerGame: 0.9
+  },
+  {
+    name: 'Joel Embiid',
+    headshot: 'src/assets/headshots/joel-embiid.jpg',
+    pointsPerGame: 27.2,
+    reboundsPerGame: 11.2,
+    assistsPerGame: 3.4,
+    stealsPerGame: 0.9,
+    blocksPerGame: 1.7
+  },
+  {
+    name: 'Jayson Tatum',
+    headshot: 'src/assets/headshots/jayson-tatum.jpg',
+    pointsPerGame: 22.5,
+    reboundsPerGame: 7.0,
+    assistsPerGame: 3.3,
+    stealsPerGame: 1.1,
+    blocksPerGame: 0.7
+  },
 ];
 
