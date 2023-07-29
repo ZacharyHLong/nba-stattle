@@ -1,5 +1,15 @@
 import React from 'react'
 
+// {
+//   name: '',
+//   headshot: '',
+//   pointsPerGame: ,
+//   reboundsPerGame: ,
+//   assistsPerGame: ,
+//   stealsPerGame: ,
+//   blocksPerGame: 
+// },
+
 export const statNames = ['Points', 'Rebounds', 'Assists', 'Steals', 'Blocks'];
 
 export const players = [
@@ -425,6 +435,187 @@ export const players = [
     assistsPerGame: 3.3,
     stealsPerGame: 1.1,
     blocksPerGame: 0.7
+  },
+  {
+    name: 'Dirk Nowitzki',
+    headshot: 'src/assets/headshots/dirk-nowitzki.jpg',
+    pointsPerGame: 20.7,
+    reboundsPerGame: 7.5,
+    assistsPerGame: 2.4,
+    stealsPerGame: 0.8,
+    blocksPerGame: 0.8
+  },
+
+  {
+    name: 'Lauri Markkanen',
+    headshot: 'src/assets/headshots/lauri-markkanen.jpg',
+    pointsPerGame: 17.3,
+    reboundsPerGame: 7.1,
+    assistsPerGame: 1.4,
+    stealsPerGame: 0.7,
+    blocksPerGame: 0.5
+  },
+  {
+    name: 'Jaylen Brown',
+    headshot: 'src/assets/headshots/jaylen-brown.jpg',
+    pointsPerGame: 17.9,
+    reboundsPerGame: 5.2,
+    assistsPerGame: 2.2,
+    stealsPerGame: 1.0,
+    blocksPerGame: 0.4
+  },
+  {
+    name: 'Bradley Beal',
+    headshot: 'src/assets/headshots/bradley-beal.jpg',
+    pointsPerGame: 22.1,
+    reboundsPerGame: 4.1,
+    assistsPerGame: 4.3,
+    stealsPerGame: 1.1,
+    blocksPerGame: 0.4
+  },
+  {
+    name: 'Domantas Sabonis',
+    headshot: 'src/assets/headshots/domantas-sabonis.jpg',
+    pointsPerGame: 15.1,
+    reboundsPerGame: 9.7,
+    assistsPerGame: 4.2,
+    stealsPerGame: 0.8,
+    blocksPerGame: 0.5
+  },
+  {
+    name: 'Paolo Banchero',
+    headshot: 'src/assets/headshots/paolo-banchero.jpg',
+    pointsPerGame: 20.0,
+    reboundsPerGame: 6.9,
+    assistsPerGame: 3.7,
+    stealsPerGame: 0.8,
+    blocksPerGame: 0.5
+  },
+  {
+    name: 'Pascal Siakam',
+    headshot: 'src/assets/headshots/pascal-siakam.jpg',
+    pointsPerGame: 17.0,
+    reboundsPerGame: 6.5,
+    assistsPerGame: 3.5,
+    stealsPerGame: 0.9,
+    blocksPerGame: 0.7
+  },
+  {
+    name: 'DeMar DeRozan',
+    headshot: 'src/assets/headshots/demar-derozan.jpg',
+    pointsPerGame: 21.0,
+    reboundsPerGame: 4.4,
+    assistsPerGame: 4.0,
+    stealsPerGame: 1.0,
+    blocksPerGame: 0.3
+  },
+  {
+    name: 'LaMelo Ball',
+    headshot: 'src/assets/headshots/lamelo-ball.jpg',
+    pointsPerGame: 19.4,
+    reboundsPerGame: 6.4,
+    assistsPerGame: 7.3,
+    stealsPerGame: 1.5,
+    blocksPerGame: 0.4
+  },
+  {
+    name: 'De\'Aaron Fox',
+    headshot: 'src/assets/headshots/deaaron-fox.jpg',
+    pointsPerGame: 20.2,
+    reboundsPerGame: 3.7,
+    assistsPerGame: 6.2,
+    stealsPerGame: 1.3,
+    blocksPerGame: 0.4
+  },
+  {
+    name: 'Zion Williamson',
+    headshot: 'src/assets/headshots/zion-williamson.jpg',
+    pointsPerGame: 25.8,
+    reboundsPerGame: 7.0,
+    assistsPerGame: 3.6,
+    stealsPerGame: 0.9,
+    blocksPerGame: 0.6
+  },
+  {
+    name: 'Ja Morant',
+    headshot: 'src/assets/headshots/ja-morant.jpg',
+    pointsPerGame: 22.4,
+    reboundsPerGame: 4.8,
+    assistsPerGame: 7.4,
+    stealsPerGame: 1.0,
+    blocksPerGame: 0.3
+  },
+  {
+    name: 'Jaren Jackson Jr.',
+    headshot: 'src/assets/headshots/jaren-jackson-jr.jpg',
+    pointsPerGame: 16.4,
+    reboundsPerGame: 5.5,
+    assistsPerGame: 1.1,
+    stealsPerGame: 0.9,
+    blocksPerGame: 2.1
+  },
+  {
+    name: 'Desmond Bane',
+    headshot: 'src/assets/headshots/desmond-bane.jpg',
+    pointsPerGame: 16.1,
+    reboundsPerGame: 4.1,
+    assistsPerGame: 2.9,
+    stealsPerGame: 0.9,
+    blocksPerGame: 0.3
+  },
+  {
+    name: 'Kevin Porter Jr.',
+    headshot: 'src/assets/headshots/kevin-porter-jr.jpg',
+    pointsPerGame: 15.3,
+    reboundsPerGame: 4.3,
+    assistsPerGame: 5.0,
+    stealsPerGame: 0.9,
+    blocksPerGame: 0.3
+  },
+  {
+    name: 'Tyler Herro',
+    headshot: 'src/assets/headshots/tyler-herro.jpg',
+    pointsPerGame: 17.7,
+    reboundsPerGame: 4.9,
+    assistsPerGame: 3.5,
+    stealsPerGame: 0.7,
+    blocksPerGame: 0.2
+  },
+  {
+    name: 'Bam Adebayo',
+    headshot: 'src/assets/headshots/bam-adebayo.jpg',
+    pointsPerGame: 14.7,
+    reboundsPerGame: 8.5,
+    assistsPerGame: 3.4,
+    stealsPerGame: 1.0,
+    blocksPerGame: 0.9
+  },
+  {
+    name: 'Jalen Brunson',
+    headshot: 'src/assets/headshots/jalen-brunson.jpg',
+    pointsPerGame: 14.3,
+    reboundsPerGame: 3.1,
+    assistsPerGame: 4.2,
+    stealsPerGame: 0.6,
+    blocksPerGame: 0.1
+  },
+  {
+    name: 'Julius Randle',
+    headshot: 'src/assets/headshots/julius-randle.jpg',
+    pointsPerGame: 18.7,
+    reboundsPerGame: 9.4,
+    assistsPerGame: 3.6,
+    stealsPerGame: 0.7,
+    blocksPerGame: 0.4
+  },
+  {
+    name: 'Tyrese Haliburton',
+    headshot: 'src/assets/headshots/tyrese-haliburton.jpg',
+    pointsPerGame: 16.2,
+    reboundsPerGame: 3.6,
+    assistsPerGame: 8.0,
+    stealsPerGame: 1.7,
+    blocksPerGame: 0.5
   },
 ];
 
