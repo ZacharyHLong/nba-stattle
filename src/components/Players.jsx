@@ -617,5 +617,41 @@ export const players = [
     stealsPerGame: 1.7,
     blocksPerGame: 0.5
   },
+  {
+    name: 'Jrue Holiday',
+    headshot: 'src/assets/headshots/jrue-holiday.jpg',
+    pointsPerGame: 16.4,
+    reboundsPerGame: 4.1,
+    assistsPerGame: 6.5,
+    stealsPerGame: 1.5,
+    blocksPerGame: 0.5
+  },
+  {
+    name: 'Brandon Ingram',
+    headshot: 'src/assets/headshots/brandon-ingram.jpg',
+    pointsPerGame: 19.2,
+    reboundsPerGame: 5.2,
+    assistsPerGame: 4.1,
+    stealsPerGame: 0.7,
+    blocksPerGame: 0.6
+  },
+  {
+    name: 'Cade Cunningham',
+    headshot: 'src/assets/headshots/cade-cunningham.jpg',
+    pointsPerGame: 17.8,
+    reboundsPerGame: 5.6,
+    assistsPerGame: 5.6,
+    stealsPerGame: 1.2,
+    blocksPerGame: 0.7
+  },
+  {
+    name: 'Zach Lavine',
+    headshot: 'src/assets/headshots/zach-lavine.jpg',
+    pointsPerGame: 20.5,
+    reboundsPerGame: 4.0,
+    assistsPerGame: 3.9,
+    stealsPerGame: 0.9,
+    blocksPerGame: 0.3
+  },
 ];
 

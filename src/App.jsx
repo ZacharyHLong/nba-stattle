@@ -76,7 +76,7 @@ const App = () => {
       setShowWinModal(true);
     } else {
       setErrorMessage(`You got ${correctCount} out of 5 correct.`);
-      if (userFouls >= 4) {
+      if (userFouls >= 5) {
         setUserFouls(userFouls + 1);
         setShowGameOverModal(true); 
       } else {
